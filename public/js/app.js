@@ -1,25 +1,3 @@
-//const { response } = require("express")
-
-console.log('Client side javascript is loaded')
-
-/*
-fetch('http://localhost:3000/weather?address=maharashtra').then((response) => {
-  response.json().then((data) => {
-
-      if(data.Error)
-      {
-          console.log(data.Error)
-      }
-      else
-      {
-      console.log(data.location)
-      console.log(data.forcast)
-      }
-      
-  })
-})
-*/
-
 const weatherform = document.querySelector('form')
 const search = document.querySelector('input')
 const messageone = document.querySelector('#m1')
