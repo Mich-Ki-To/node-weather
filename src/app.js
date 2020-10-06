@@ -9,11 +9,11 @@ const geocode = require('./utils/geocode.js')
 
 //Define paths for Express config
 const publicdirectory = path.join(__dirname,'../public')
-const viewspath = path.join(__dirname,'/template/views')
-const partialspath = path.join(__dirname,'/template/partials')
+const viewspath = path.join(__dirname,'../template/views')
+const partialspath = path.join(__dirname,'../template/partials')
 
 console.log(path.join(__dirname,'../src/views'))
-
+console.log(path.join(__dirname))
 //set handlebar engine and views location
 app.set('view engine','hbs')
 app.set('views',viewspath)
@@ -21,6 +21,7 @@ hbs.registerPartials(partialspath)
 
 //setup static directory to serve
 app.use(express.static(publicdirectory))
+const port = process.env.PORT || 3000
 
 //app.get methods are used to serve content to html pages
 app.get('', (req,res) => {
@@ -104,8 +105,8 @@ app.get('*',(req,res) => {
 })
 
 //app.listen is used to make app listen on this particular port number
-app.listen(3000,() => {
-    console.log('Server is up & listening on 3000 port')
+app.listen(port,() => {
+    console.log('Server is up & listening on port ' + port)
 })
 
 /*app.get('', (req,res) => {
