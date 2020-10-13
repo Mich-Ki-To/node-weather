@@ -13,9 +13,10 @@ request({url,json:true},(error,{body}) => {
         callback('Unable to find location')
     }
     else{
+        console.log(body.daily.data[0])
         const temp = body.currently.temperature
         const rain = body.currently.precipProbability
-        callback(undefined,body.daily.data[0].summary+' It is currently '+temp+' degrees out'+' & there is a '+rain+' % chance of a rain')
+        callback(undefined,body.daily.data[0].summary+'\r\n It is currently '+temp+' degrees out'+'\r\n The high today is '+body.daily.data[0].temperatureHigh+' with a low of '+body.daily.data[0].temperatureLow +' & there is a '+rain+' % chance of a rain')
 
     }
 })
